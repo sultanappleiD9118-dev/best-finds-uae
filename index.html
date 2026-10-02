@@ -25,6 +25,17 @@ nav{position:sticky;top:0;z-index:40;height:66px;display:flex;align-items:center
 .navRight{display:flex;align-items:center;gap:12px}.navtag{color:#C7CFD9;font-size:13px}
 button,.cta{appearance:none;border:0;border-radius:12px;font:inherit;font-weight:850;cursor:pointer}
 .langSwitch{padding:8px 11px;background:transparent;color:white;border:1px solid rgba(255,255,255,.18);font-size:13px}
+.menuButton{width:42px;height:42px;padding:0;display:grid;place-items:center;background:transparent;color:white;border:1px solid rgba(255,255,255,.18);border-radius:12px}
+.menuIcon{width:19px;height:14px;position:relative;display:block}.menuIcon::before,.menuIcon::after,.menuIcon span{content:"";position:absolute;left:0;right:0;height:2px;border-radius:99px;background:white}.menuIcon::before{top:0}.menuIcon span{top:6px}.menuIcon::after{bottom:0}
+.menuOverlay{position:fixed;inset:0;z-index:900;background:rgba(7,16,28,.52);opacity:0;visibility:hidden;transition:.2s ease}
+.menuOverlay.open{opacity:1;visibility:visible}.menuDrawer{position:absolute;top:0;right:0;width:min(390px,88vw);height:100%;background:white;color:var(--ink);box-shadow:-22px 0 60px rgba(0,0,0,.2);transform:translateX(100%);transition:.24s ease;padding:calc(22px + env(safe-area-inset-top)) 22px 26px;overflow:auto}.menuOverlay.open .menuDrawer{transform:translateX(0)}
+html[dir="rtl"] .menuDrawer{right:auto;left:0;transform:translateX(-100%)}html[dir="rtl"] .menuOverlay.open .menuDrawer{transform:translateX(0)}
+.menuHead{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:16px;border-bottom:1px solid var(--line)}.menuHead strong{font-size:22px;color:var(--navy)}.menuClose{width:38px;height:38px;border:1px solid var(--line);background:#F7F8FA;color:var(--navy);font-size:20px}
+.menuSectionTitle{margin:22px 0 9px;color:#8A5400;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.menuLink{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 4px;border-bottom:1px solid var(--line);font-weight:800;color:var(--navy)}.menuLink small{font-size:11px;color:var(--muted);font-weight:750}.menuLink:hover{color:#9A5B00}
+.menuCount{min-width:26px;height:26px;padding:0 7px;border-radius:999px;display:grid;place-items:center;background:var(--soft);color:#8A5400;font-size:11px;font-weight:900}
+body.menuOpen{overflow:hidden}
+
 .cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 20px;background:var(--accent);color:var(--navy);box-shadow:0 8px 18px rgba(245,158,11,.22)}
 .cta:hover{background:var(--accent2);color:white}
 .languageGate{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(14,27,43,.82);backdrop-filter:blur(18px);transition:opacity .2s ease,visibility .2s ease}
@@ -67,7 +78,19 @@ html[dir="rtl"] .hero,html[dir="rtl"] .cardBody,html[dir="rtl"] .sectionHead{tex
     </div>
   </div>
 </div>
-<nav><a class="brand" href="/"><img class="brandLogo" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/a597014b-f7e9-466d-a818-6542e96d2fba.jpg" alt="Best Finds logo"><span>Best Finds</span></a><div class="navRight"><span class="navtag" data-i18n="navtag">Curated product finds</span><button class="langSwitch" id="langSwitch" type="button">🌐 EN</button></div></nav>
+<nav><a class="brand" href="/"><img class="brandLogo" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/a597014b-f7e9-466d-a818-6542e96d2fba.jpg" alt="Best Finds logo"><span>Best Finds</span></a><div class="navRight"><span class="navtag" data-i18n="navtag">Curated product finds</span><button class="langSwitch" id="langSwitch" type="button">🌐 EN</button><button class="menuButton" id="menuButton" type="button" aria-label="Open products menu"><span class="menuIcon"><span></span></span></button></div></nav>
+<div class="menuOverlay" id="siteMenu" aria-hidden="true">
+  <aside class="menuDrawer" aria-label="Products menu">
+    <div class="menuHead"><strong>Products / المنتجات</strong><button class="menuClose" id="menuClose" type="button" aria-label="Close menu">×</button></div>
+    <div class="menuSectionTitle">Categories / الأقسام</div>
+    <a class="menuLink categoryNav" data-category="all" href="/?category=all"><span>All Products / كل المنتجات</span><span class="menuCount">6</span></a>
+    <a class="menuLink categoryNav" data-category="electronics" href="/?category=electronics"><span>Electronics / إلكترونيات</span><span class="menuCount">4</span></a>
+    <a class="menuLink categoryNav" data-category="skincare" href="/?category=skincare"><span>Skincare / العناية بالبشرة</span><span class="menuCount">1</span></a>
+    <a class="menuLink categoryNav" data-category="personal-care" href="/?category=personal-care"><span>Personal Care / العناية الشخصية</span><span class="menuCount">1</span></a>
+    <a class="menuLink categoryNav" data-category="kitchen" href="/?category=kitchen"><span>Kitchen Tools / أدوات المطبخ</span><small>Soon / قريباً</small></a>
+  </aside>
+</div>
+
 <main class="wrap">
 <section class="hero">
   <p class="eyebrow" data-i18n="eyebrow">Best Finds</p>
@@ -102,7 +125,7 @@ html[dir="rtl"] .hero,html[dir="rtl"] .cardBody,html[dir="rtl"] .sectionHead{tex
 <div class="sectionHead"><h2 data-i18n="featured">Featured products</h2><span class="small" data-i18n="small">Tap a product for photos, video and details.</span></div>
 
 <section class="grid">
-  <a class="card productLink" href="/products/facial-cleanser.html">
+  <a class="card productLink" data-category="skincare" href="/products/facial-cleanser.html">
     <div class="media"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/76356659-1881-4fc5-be0a-0e1397994f89.jpg" alt="USB facial cleansing device"><span class="badge" data-i18n="badge1">Skincare</span></div>
     <div class="cardBody">
       <h3 data-i18n="p1">USB Facial Cleansing Device</h3>
@@ -112,7 +135,7 @@ html[dir="rtl"] .hero,html[dir="rtl"] .cardBody,html[dir="rtl"] .sectionHead{tex
     </div>
   </a>
 
-  <a class="card productLink" href="/products/face-neck-massager.html">
+  <a class="card productLink" data-category="personal-care" href="/products/face-neck-massager.html">
     <div class="media"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/3ac1bb0b-8cc0-4a0c-bbf5-eed34f109f11.jpg" alt="Face and neck massager"><span class="badge popular" data-i18n="badge2">Popular pick</span></div>
     <div class="cardBody">
       <h3 data-i18n="p2">Face & Neck Massager – 7 Modes</h3>
@@ -123,7 +146,7 @@ html[dir="rtl"] .hero,html[dir="rtl"] .cardBody,html[dir="rtl"] .sectionHead{tex
     </div>
   </a>
 
-  <a class="card productLink" href="/products/tab-a11-case.html">
+  <a class="card productLink" data-category="electronics" href="/products/tab-a11-case.html">
     <div class="media"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/a663af4e-6067-4e2a-9da1-fd310a9465bf.png" alt="Samsung Galaxy Tab A11 8.7 case"><span class="badge" data-i18n="badge3">Tech</span></div>
     <div class="cardBody">
       <h3 data-i18n="p3">Galaxy Tab A11 8.7" Soft TPU Case</h3>
@@ -133,7 +156,7 @@ html[dir="rtl"] .hero,html[dir="rtl"] .cardBody,html[dir="rtl"] .sectionHead{tex
     </div>
   </a>
 
-  <a class="card productLink" href="/products/m26-digital-camera.html">
+  <a class="card productLink" data-category="electronics" href="/products/m26-digital-camera.html">
     <div class="media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/hf_20261002_095902_edaedfa7-ead6-40eb-b271-98d2d65b6e4d.png" alt="M26 CCD digital camera"><span class="badge" data-i18n="badge4">Camera</span></div>
     <div class="cardBody">
       <h3 data-i18n="p4">M26 CCD Digital Camera</h3>
@@ -143,7 +166,7 @@ html[dir="rtl"] .hero,html[dir="rtl"] .cardBody,html[dir="rtl"] .sectionHead{tex
     </div>
   </a>
 
-  <a class="card productLink" href="/products/x7-bone-conduction-headphones.html">
+  <a class="card productLink" data-category="electronics" href="/products/x7-bone-conduction-headphones.html">
     <div class="media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/hf_20261002_095905_22c625c3-a2cd-43d0-aee4-afe000793a31.png" alt="POLVCDG X7 bone conduction headphones"><span class="badge" data-i18n="badge5">Fitness audio</span></div>
     <div class="cardBody">
       <h3 data-i18n="p5">POLVCDG X7 Bone Conduction Headphones</h3>
@@ -153,7 +176,7 @@ html[dir="rtl"] .hero,html[dir="rtl"] .cardBody,html[dir="rtl"] .sectionHead{tex
     </div>
   </a>
 
-  <a class="card productLink" href="/products/android-14-tablet-bundle.html">
+  <a class="card productLink" data-category="electronics" href="/products/android-14-tablet-bundle.html">
     <div class="media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/hf_20261002_095909_cec2d93b-52f1-44dd-9b52-215a6fc0f04b.png" alt="10.1 inch Android 14 tablet bundle"><span class="badge popular" data-i18n="badge6">Bundle</span></div>
     <div class="cardBody">
       <h3 data-i18n="p6">10.1-inch Android 14 Tablet Bundle</h3>
@@ -163,6 +186,7 @@ html[dir="rtl"] .hero,html[dir="rtl"] .cardBody,html[dir="rtl"] .sectionHead{tex
     </div>
   </a>
 </section>
+<div id="emptyCategory" style="display:none;margin:22px 0;padding:28px;border:1px dashed var(--line);border-radius:18px;background:white;text-align:center"><strong style="display:block;color:var(--navy);font-size:20px;margin-bottom:6px">No products</strong><span style="color:var(--muted)">No products in this category yet</span></div>
 
 <section class="infoBox">
   <div class="infoItem"><strong data-i18n="info1h">Shop with context</strong><span data-i18n="info1b">We show the key details before sending you to the retailer.</span></div>
