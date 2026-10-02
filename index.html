@@ -26,6 +26,7 @@
     h2{margin:0;font-size:clamp(34px,6vw,56px);letter-spacing:-.05em;line-height:1}.small{color:var(--muted);font-size:14px}
     .product{display:grid;grid-template-columns:240px 1fr;gap:28px;padding:18px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));transition:transform .2s ease,border-color .2s ease}
     .product:hover{transform:translateY(-3px);border-color:rgba(214,174,92,.45)}
+    .product + .product{margin-top:22px}
     .product img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;background:#fff}
     .productBody{display:flex;flex-direction:column;justify-content:center;padding:8px 6px 8px 0}
     .product h3{margin:4px 0 10px;font-size:clamp(28px,4vw,42px);line-height:1.04;letter-spacing:-.04em}
@@ -128,6 +129,25 @@
           <p class="terms" data-i18n="terms">Temu showed an extra 30% off for eligible new app users on orders over AED 70, up to AED 90 off per order. One redemption per new app user. Price, eligibility, and discount may change; the offer page controls.</p>
         </div>
       </article>
+
+      <article class="product">
+        <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/3ac1bb0b-8cc0-4a0c-bbf5-eed34f109f11.jpg" alt="Rechargeable face and neck massager" />
+        <div class="productBody">
+          <p class="eyebrow" data-i18n="category2">Self-care find</p>
+          <h3 data-i18n="productName2">Face and Neck Massager – 7 Modes</h3>
+          <p class="desc" data-i18n="productDesc2">Rechargeable USB face and neck massager with seven modes for an at-home self-care routine.</p>
+          <p class="price">AED 27.86</p>
+          <p class="note" data-i18n="priceNote2">Coupon price shown by Temu. Price may change.</p>
+
+          <div class="codebox">
+            <div><span data-i18n="newUserCode2">New-user code</span><strong>alq301726</strong></div>
+            <button class="copyCodeBtn" type="button" data-code="alq301726" data-i18n="copyCode">Copy code</button>
+          </div>
+
+          <a class="cta" href="https://temu.to/k/enr5ylzxccp" target="_blank" rel="sponsored noopener noreferrer" data-i18n="viewDeal2">View deal ↗</a>
+          <p class="terms" data-i18n="terms2">Temu showed a coupon price of AED 27.86 for this item. The final price, availability, eligibility, and discount may change; check the Temu offer page before purchase.</p>
+        </div>
+      </article>
     </section>
 
     <section class="section how">
@@ -169,6 +189,13 @@
         copied:"Copied",
         viewDeal:"View deal ↗",
         terms:"Temu showed an extra 30% off for eligible new app users on orders over AED 70, up to AED 90 off per order. One redemption per new app user. Price, eligibility, and discount may change; the offer page controls.",
+        category2:"Self-care find",
+        productName2:"Face and Neck Massager – 7 Modes",
+        productDesc2:"Rechargeable USB face and neck massager with seven modes for an at-home self-care routine.",
+        priceNote2:"Coupon price shown by Temu. Price may change.",
+        newUserCode2:"New-user code",
+        viewDeal2:"View deal ↗",
+        terms2:"Temu showed a coupon price of AED 27.86 for this item. The final price, availability, eligibility, and discount may change; check the Temu offer page before purchase.",
         how:"How it works",
         threeSteps:"Three quick steps.",
         step1Title:"Pick a product",
@@ -197,6 +224,13 @@
         copied:"تم النسخ",
         viewDeal:"عرض المنتج ↗",
         terms:"عرض Temu خصمًا إضافيًا بنسبة 30% للمستخدمين الجدد المؤهلين على الطلبات التي تزيد عن 70 درهمًا، وبحد أقصى 90 درهمًا لكل طلب. يمكن لكل مستخدم جديد الاستفادة من العرض مرة واحدة. قد يتغير السعر أو الخصم أو الأهلية، والصفحة الرسمية للعرض هي المرجع النهائي.",
+        category2:"منتج للعناية الشخصية",
+        productName2:"جهاز مساج للوجه والرقبة – 7 أوضاع",
+        productDesc2:"جهاز قابل للشحن عبر USB للوجه والرقبة، مع سبعة أوضاع للاستخدام ضمن روتين العناية المنزلية.",
+        priceNote2:"سعر الكوبون المعروض من Temu. السعر قابل للتغيير.",
+        newUserCode2:"كود المستخدم الجديد",
+        viewDeal2:"عرض المنتج ↗",
+        terms2:"عرض Temu سعر كوبون قدره 27.86 درهم لهذا المنتج. قد يتغير السعر النهائي أو التوفر أو الأهلية أو الخصم؛ تحقق من صفحة العرض في Temu قبل الشراء.",
         how:"كيف يعمل",
         threeSteps:"ثلاث خطوات بسيطة.",
         step1Title:"اختر المنتج",
@@ -240,15 +274,20 @@
       document.body.style.overflow = 'hidden';
     });
 
-    copyBtn.addEventListener('click', async () => {
+    async function copyAffiliateCode(btn){
       try {
-        await navigator.clipboard.writeText('alq301726');
-        const old = copyBtn.textContent;
-        copyBtn.textContent = translations[currentLang || 'en'].copied;
-        setTimeout(() => copyBtn.textContent = translations[currentLang || 'en'].copyCode, 1600);
+        await navigator.clipboard.writeText(btn.dataset.code || 'alq301726');
+        btn.textContent = translations[currentLang || 'en'].copied;
+        setTimeout(() => btn.textContent = translations[currentLang || 'en'].copyCode, 1600);
       } catch (_) {
-        copyBtn.textContent = 'alq301726';
+        btn.textContent = btn.dataset.code || 'alq301726';
       }
+    }
+
+    copyBtn.dataset.code = 'alq301726';
+    copyBtn.addEventListener('click', () => copyAffiliateCode(copyBtn));
+    document.querySelectorAll('.copyCodeBtn').forEach(btn => {
+      btn.addEventListener('click', () => copyAffiliateCode(btn));
     });
 
     if(currentLang){
