@@ -64,7 +64,11 @@ h1{margin:0 0 14px;font-size:clamp(42px,7vw,70px);line-height:.98;letter-spacing
 .infoBox{margin:32px 0 4px;padding:18px 20px;border-radius:18px;background:white;border:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.infoItem strong{display:block;color:var(--navy);margin-bottom:4px}.infoItem span{color:var(--muted);font-size:13px;line-height:1.4}
 html[dir="rtl"] .hero,html[dir="rtl"] .cardBody,html[dir="rtl"] .sectionHead{text-align:right}html[dir="rtl"] .eyebrow{letter-spacing:0;text-transform:none}html[dir="rtl"] h1,html[dir="rtl"] .card h3{letter-spacing:0}html[dir="rtl"] .badge{left:auto;right:14px}
 @media(max-width:720px){.reelFeature{grid-template-columns:1fr;padding:16px}.reelVideo{width:min(78vw,330px);margin:auto}.hero{padding:36px 0 14px}.grid{grid-template-columns:1fr;gap:16px}.card{display:grid;grid-template-columns:130px 1fr}.media img{height:100%;aspect-ratio:auto}.badge{font-size:10px;top:8px;left:8px}.cardBody{padding:15px}.card h3{font-size:21px}.desc{font-size:13px}.chips{display:none}.price{font-size:22px}.view{font-size:13px}.infoBox{grid-template-columns:1fr}.proof{font-size:12px}html[dir="rtl"] .badge{left:auto;right:8px}}
-</style></head>
+</style><script>
+window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
 <body>
 
 <div class="languageGate" id="languageGate" aria-modal="true" role="dialog">
@@ -234,6 +238,25 @@ function filterCategory(cat,scroll=true){
 }
 document.querySelectorAll(".categoryNav").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();filterCategory(a.dataset.category)}));
 filterCategory(new URLSearchParams(location.search).get("category")||"all",false);
+
+
+/* Private analytics events for the site owner. */
+document.querySelectorAll(".productLink").forEach(link=>{
+  link.addEventListener("click",()=>{
+    try{
+      const href=link.getAttribute("href")||"";
+      const slug=(href.split("/products/")[1]||"").split("?")[0].replace(".html","");
+      window.va("event",{name:"Product Detail Click",data:{product:slug||"unknown",language:lang||"en"}});
+    }catch(_){}
+  });
+});
+if(best3Video){
+  let videoTracked=false;
+  best3Video.addEventListener("play",()=>{
+    if(videoTracked)return;videoTracked=true;
+    try{window.va("event",{name:"Featured Video Play",data:{video:"best-3-temu-finds",language:lang||"en"}})}catch(_){}
+  });
+}
 
 </script>
 </body></html>
