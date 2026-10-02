@@ -15,6 +15,17 @@ nav{position:sticky;top:0;z-index:40;height:66px;display:flex;align-items:center
 .navRight{display:flex;align-items:center;gap:12px}.navtag{color:#C7CFD9;font-size:13px}
 button,.cta{appearance:none;border:0;border-radius:12px;font:inherit;font-weight:850;cursor:pointer}
 .langSwitch{padding:8px 11px;background:transparent;color:white;border:1px solid rgba(255,255,255,.18);font-size:13px}
+.menuButton{width:42px;height:42px;padding:0;display:grid;place-items:center;background:transparent;color:white;border:1px solid rgba(255,255,255,.18);border-radius:12px}
+.menuIcon{width:19px;height:14px;position:relative;display:block}.menuIcon::before,.menuIcon::after,.menuIcon span{content:"";position:absolute;left:0;right:0;height:2px;border-radius:99px;background:white}.menuIcon::before{top:0}.menuIcon span{top:6px}.menuIcon::after{bottom:0}
+.menuOverlay{position:fixed;inset:0;z-index:900;background:rgba(7,16,28,.52);opacity:0;visibility:hidden;transition:.2s ease}
+.menuOverlay.open{opacity:1;visibility:visible}.menuDrawer{position:absolute;top:0;right:0;width:min(390px,88vw);height:100%;background:white;color:var(--ink);box-shadow:-22px 0 60px rgba(0,0,0,.2);transform:translateX(100%);transition:.24s ease;padding:calc(22px + env(safe-area-inset-top)) 22px 26px;overflow:auto}.menuOverlay.open .menuDrawer{transform:translateX(0)}
+html[dir="rtl"] .menuDrawer{right:auto;left:0;transform:translateX(-100%)}html[dir="rtl"] .menuOverlay.open .menuDrawer{transform:translateX(0)}
+.menuHead{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:16px;border-bottom:1px solid var(--line)}.menuHead strong{font-size:22px;color:var(--navy)}.menuClose{width:38px;height:38px;border:1px solid var(--line);background:#F7F8FA;color:var(--navy);font-size:20px}
+.menuSectionTitle{margin:22px 0 9px;color:#8A5400;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.menuLink{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 4px;border-bottom:1px solid var(--line);font-weight:800;color:var(--navy)}.menuLink small{font-size:11px;color:var(--muted);font-weight:750}.menuLink:hover{color:#9A5B00}
+.menuCount{min-width:26px;height:26px;padding:0 7px;border-radius:999px;display:grid;place-items:center;background:var(--soft);color:#8A5400;font-size:11px;font-weight:900}
+body.menuOpen{overflow:hidden}
+
 .cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 20px;background:var(--accent);color:var(--navy);box-shadow:0 8px 18px rgba(245,158,11,.22)}
 .cta:hover{background:var(--accent2);color:white}
 .languageGate{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(14,27,43,.82);backdrop-filter:blur(18px);transition:opacity .2s ease,visibility .2s ease}
@@ -55,7 +66,19 @@ html[dir="rtl"] .detail{text-align:right}html[dir="rtl"] .eyebrow{letter-spacing
     </div>
   </div>
 </div>
-<nav><a class="brand" href="/"><img class="brandLogo" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/a597014b-f7e9-466d-a818-6542e96d2fba.jpg" alt="Best Finds logo"><span>Best Finds</span></a><div class="navRight"><span class="navtag" data-i18n="navtag">Product details</span><button class="langSwitch" id="langSwitch" type="button">🌐 EN</button></div></nav>
+<nav><a class="brand" href="/"><img class="brandLogo" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/a597014b-f7e9-466d-a818-6542e96d2fba.jpg" alt="Best Finds logo"><span>Best Finds</span></a><div class="navRight"><span class="navtag" data-i18n="navtag">Product details</span><button class="langSwitch" id="langSwitch" type="button">🌐 EN</button><button class="menuButton" id="menuButton" type="button" aria-label="Open products menu"><span class="menuIcon"><span></span></span></button></div></nav>
+<div class="menuOverlay" id="siteMenu" aria-hidden="true">
+  <aside class="menuDrawer" aria-label="Products menu">
+    <div class="menuHead"><strong>Products / المنتجات</strong><button class="menuClose" id="menuClose" type="button" aria-label="Close menu">×</button></div>
+    <div class="menuSectionTitle">Categories / الأقسام</div>
+    <a class="menuLink categoryNav" data-category="all" href="/?category=all"><span>All Products / كل المنتجات</span><span class="menuCount">6</span></a>
+    <a class="menuLink categoryNav" data-category="electronics" href="/?category=electronics"><span>Electronics / إلكترونيات</span><span class="menuCount">4</span></a>
+    <a class="menuLink categoryNav" data-category="skincare" href="/?category=skincare"><span>Skincare / العناية بالبشرة</span><span class="menuCount">1</span></a>
+    <a class="menuLink categoryNav" data-category="personal-care" href="/?category=personal-care"><span>Personal Care / العناية الشخصية</span><span class="menuCount">1</span></a>
+    <a class="menuLink categoryNav" data-category="kitchen" href="/?category=kitchen"><span>Kitchen Tools / أدوات المطبخ</span><small>Soon / قريباً</small></a>
+  </aside>
+</div>
+
 <main class="wrap">
 <a class="back" id="backLink" href="/" data-i18n="back">← All products</a>
 <section class="productPage">
@@ -92,4 +115,12 @@ ar:{navtag:"تفاصيل المنتج",back:"جميع المنتجات →",cate
 const gate=document.getElementById("languageGate"),sw=document.getElementById("langSwitch"),video=document.getElementById("productVideo"),src=document.getElementById("videoSource"),back=document.getElementById("backLink"),copy=document.getElementById("copyBtn");const videos={en:"https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/1f7e32a3-4f69-4a95-ba9b-c11f214bfc61.mp4",ar:"https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/4b76e4fe-72d3-41d2-9cf3-6bdd1a825cb8.mp4"};let lang=new URLSearchParams(location.search).get("lang")||localStorage.getItem("bestFindsLanguage")||"";
 function apply(l,save=true){lang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.dataset.i18n;if(t[l][k]!==undefined)e.textContent=t[l][k]});sw.textContent=l==="ar"?"🌐 العربية":"🌐 EN";back.href="/?lang="+l;if(src.getAttribute("src")!==videos[l]){src.setAttribute("src",videos[l]);video.load()}if(save)localStorage.setItem("bestFindsLanguage",l);gate.classList.add("hidden");document.body.style.overflow=""}
 document.querySelectorAll("[data-language]").forEach(b=>b.onclick=()=>apply(b.dataset.language));sw.onclick=()=>{gate.classList.remove("hidden");document.body.style.overflow="hidden"};copy.onclick=async()=>{try{await navigator.clipboard.writeText("alq301726");copy.textContent=t[lang||"en"].copied;setTimeout(()=>copy.textContent=t[lang||"en"].copy,1500)}catch(_){copy.textContent="alq301726"}};if(lang)apply(lang,false);else document.body.style.overflow="hidden";
+
+const siteMenu=document.getElementById("siteMenu"),menuButton=document.getElementById("menuButton"),menuClose=document.getElementById("menuClose");
+function openMenu(){siteMenu.classList.add("open");siteMenu.setAttribute("aria-hidden","false");document.body.classList.add("menuOpen")}
+function closeMenu(){siteMenu.classList.remove("open");siteMenu.setAttribute("aria-hidden","true");document.body.classList.remove("menuOpen")}
+menuButton.onclick=openMenu;menuClose.onclick=closeMenu;siteMenu.addEventListener("click",e=>{if(e.target===siteMenu)closeMenu()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu()});
+document.querySelectorAll(".categoryNav").forEach(a=>a.addEventListener("click",()=>closeMenu()));
+
 </script></body></html>
