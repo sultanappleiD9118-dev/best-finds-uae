@@ -201,5 +201,39 @@ ar:{navtag:"اختيارات منتجات منتقاة",eyebrow:"أفضل الا
 const gate=document.getElementById("languageGate"),sw=document.getElementById("langSwitch"),best3Video=document.getElementById("best3Video"),best3VideoSource=document.getElementById("best3VideoSource");const best3Videos={en:"https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/24a1659f-136d-4381-b830-794368abac26.mp4",ar:"https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/41064752-d49e-4a00-9569-5a1b069bc309.mp4"};let lang=new URLSearchParams(location.search).get("lang")||localStorage.getItem("bestFindsLanguage")||"";
 function apply(l,save=true){lang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.dataset.i18n;if(t[l][k]!==undefined)e.textContent=t[l][k]});sw.textContent=l==="ar"?"🌐 العربية":"🌐 EN";if(best3VideoSource&&best3VideoSource.getAttribute("src")!==best3Videos[l]){best3VideoSource.setAttribute("src",best3Videos[l]);best3Video.load()}if(save)localStorage.setItem("bestFindsLanguage",l);gate.classList.add("hidden");document.body.style.overflow="";document.querySelectorAll(".productLink").forEach(a=>{const u=new URL(a.href);a.href=u.pathname+"?lang="+l})}
 document.querySelectorAll("[data-language]").forEach(b=>b.onclick=()=>apply(b.dataset.language));sw.onclick=()=>{gate.classList.remove("hidden");document.body.style.overflow="hidden"};if(lang)apply(lang,false);else document.body.style.overflow="hidden";
+
+const siteMenu=document.getElementById("siteMenu"),menuButton=document.getElementById("menuButton"),menuClose=document.getElementById("menuClose");
+function openMenu(){if(!siteMenu)return;siteMenu.classList.add("open");siteMenu.setAttribute("aria-hidden","false");document.body.classList.add("menuOpen")}
+function closeMenu(){if(!siteMenu)return;siteMenu.classList.remove("open");siteMenu.setAttribute("aria-hidden","true");document.body.classList.remove("menuOpen")}
+if(menuButton)menuButton.addEventListener("click",openMenu);
+if(menuClose)menuClose.addEventListener("click",closeMenu);
+if(siteMenu)siteMenu.addEventListener("click",e=>{if(e.target===siteMenu)closeMenu()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu()});
+
+const productCards=[...document.querySelectorAll(".productLink")],emptyState=document.getElementById("emptyCategory");
+function filterCategory(cat,scroll=true){
+  const valid=["all","electronics","skincare","personal-care","kitchen"];
+  if(!valid.includes(cat))cat="all";
+  let shown=0;
+  productCards.forEach(card=>{
+    const ok=cat==="all"||card.dataset.category===cat;
+    card.style.display=ok?"":"none";
+    if(ok)shown++;
+  });
+  if(emptyState){
+    emptyState.style.display=shown?"none":"block";
+    const h=emptyState.querySelector("strong"),s=emptyState.querySelector("span");
+    if(h)h.textContent=cat==="kitchen"?"Kitchen Tools / أدوات المطبخ":"No products / لا توجد منتجات";
+    if(s)s.textContent=cat==="kitchen"?"Coming soon / قريباً":"No products in this category yet / لا توجد منتجات في هذا القسم حالياً";
+  }
+  const u=new URL(location.href);
+  u.searchParams.set("category",cat);
+  history.replaceState(null,"",u);
+  closeMenu();
+  if(scroll)document.querySelector(".sectionHead")?.scrollIntoView({behavior:"smooth",block:"start"});
+}
+document.querySelectorAll(".categoryNav").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();filterCategory(a.dataset.category)}));
+filterCategory(new URLSearchParams(location.search).get("category")||"all",false);
+
 </script>
 </body></html>
