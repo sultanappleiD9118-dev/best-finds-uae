@@ -52,7 +52,11 @@ html[dir="rtl"] body{font-family:Tahoma,Arial,"Segoe UI",sans-serif}
 html[dir="rtl"] .detail{text-align:right}html[dir="rtl"] .eyebrow{letter-spacing:0;text-transform:none}html[dir="rtl"] .detail h1{letter-spacing:0}html[dir="rtl"] .note{text-align:left}
 @media(max-width:860px){.productPage{grid-template-columns:1fr}.detail{position:static}.gallery{grid-template-columns:1fr .62fr}}
 @media(max-width:620px){body{padding-bottom:82px}.back{margin-top:18px}.gallery{grid-template-columns:1fr}.photo img{aspect-ratio:1/1}.videoCard{width:min(76vw,330px);margin:auto}.detail{padding:18px}.featureList{grid-template-columns:repeat(3,1fr)}.confidence{grid-template-columns:1fr 1fr 1fr}.mobileBuy{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px max(14px,env(safe-area-inset-left)) calc(11px + env(safe-area-inset-bottom));background:white;border-top:1px solid var(--line);box-shadow:0 -10px 30px rgba(14,27,43,.12)}.mobileBuy .mPrice{font-weight:900;color:var(--navy);font-size:19px}.mobileBuy .cta{width:auto;padding:13px 16px}.priceRow{align-items:flex-start}.note{font-size:11px}}
-</style></head>
+</style><script>
+window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
 <body>
 
 <div class="languageGate" id="languageGate" aria-modal="true" role="dialog">
@@ -121,5 +125,21 @@ function closeMenu(){siteMenu.classList.remove("open");siteMenu.setAttribute("ar
 menuButton.onclick=openMenu;menuClose.onclick=closeMenu;siteMenu.addEventListener("click",e=>{if(e.target===siteMenu)closeMenu()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu()});
 document.querySelectorAll(".categoryNav").forEach(a=>a.addEventListener("click",()=>closeMenu()));
+
+
+/* Private analytics events for the site owner. */
+document.querySelectorAll('a.cta[href*="temu.to"]').forEach(link=>{
+  link.addEventListener("click",()=>{
+    try{window.va("event",{name:"Temu Deal Click",data:{product:"x7-bone-conduction-headphones",language:lang||"en"}})}catch(_){}
+  });
+});
+const trackedVideo=document.getElementById("productVideo");
+if(trackedVideo){
+  let productVideoTracked=false;
+  trackedVideo.addEventListener("play",()=>{
+    if(productVideoTracked)return;productVideoTracked=true;
+    try{window.va("event",{name:"Product Video Play",data:{product:"x7-bone-conduction-headphones",language:lang||"en"}})}catch(_){}
+  });
+}
 
 </script></body></html>
