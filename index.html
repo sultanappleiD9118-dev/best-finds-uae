@@ -1,281 +1,94 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Best Finds</title><meta name="description" content="Curated product finds with direct Temu links."><meta name="theme-color" content="#0E1B2B">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Best Finds</title>
+<meta name="description" content="We search Temu, compare offers, and curate useful product finds for UAE shoppers.">
+<meta name="theme-color" content="#0E1B2B">
 <link rel="icon" type="image/png" sizes="32x32" href="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/cfdc71ed-9603-4a18-bed0-460df825bdcc.png">
 <link rel="icon" type="image/png" sizes="512x512" href="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/2f21263c-6079-4401-af8c-2175bf2f63ad.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/3a1a68c4-cb4f-4470-a84f-e3026e79331c.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="apple-mobile-web-app-title" content="Best Finds">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Best Finds">
-<meta property="og:description" content="Curated product finds with direct Temu links.">
+<meta property="og:description" content="We search Temu, compare offers, and curate useful product finds for UAE shoppers.">
 <meta property="og:url" content="https://best-finds-uae.vercel.app/">
 <meta property="og:image" content="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/d2969a49-b74f-4980-b919-6bb2a7e37fa7.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/d2969a49-b74f-4980-b919-6bb2a7e37fa7.png">
 <style>
-
-:root{--navy:#0E1B2B;--navy2:#13263b;--bg:#F6F7F9;--card:#FFFFFF;--ink:#13202f;--muted:#657184;--line:#E3E7EC;--accent:#F59E0B;--accent2:#D97706;--soft:#FFF7E6;--good:#177245;--shadow:0 12px 36px rgba(14,27,43,.08)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif}
-a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92vw);margin:auto}
-nav{position:sticky;top:0;z-index:40;height:66px;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:rgba(14,27,43,.96);backdrop-filter:blur(14px);color:white;border-bottom:1px solid rgba(255,255,255,.08)}
-.brand{display:flex;align-items:center;gap:11px;font-weight:850}.brandLogo{width:46px;height:46px;object-fit:cover;border-radius:12px;display:block;flex:0 0 auto}.mark{display:grid;place-items:center;width:38px;height:38px;border:1px solid rgba(245,158,11,.8);border-radius:12px;color:#FFD27A;font-size:13px}
-.navRight{display:flex;align-items:center;gap:12px}.navtag{color:#C7CFD9;font-size:13px}
-button,.cta{appearance:none;border:0;border-radius:12px;font:inherit;font-weight:850;cursor:pointer}
-.langSwitch{padding:8px 11px;background:transparent;color:white;border:1px solid rgba(255,255,255,.18);font-size:13px}
-.menuButton{width:42px;height:42px;padding:0;display:grid;place-items:center;background:transparent;color:white;border:1px solid rgba(255,255,255,.18);border-radius:12px}
-.menuIcon{width:19px;height:14px;position:relative;display:block}.menuIcon::before,.menuIcon::after,.menuIcon span{content:"";position:absolute;left:0;right:0;height:2px;border-radius:99px;background:white}.menuIcon::before{top:0}.menuIcon span{top:6px}.menuIcon::after{bottom:0}
-.menuOverlay{position:fixed;inset:0;z-index:900;background:rgba(7,16,28,.52);opacity:0;visibility:hidden;transition:.2s ease}
-.menuOverlay.open{opacity:1;visibility:visible}.menuDrawer{position:absolute;top:0;right:0;width:min(390px,88vw);height:100%;background:white;color:var(--ink);box-shadow:-22px 0 60px rgba(0,0,0,.2);transform:translateX(100%);transition:.24s ease;padding:calc(22px + env(safe-area-inset-top)) 22px 26px;overflow:auto}.menuOverlay.open .menuDrawer{transform:translateX(0)}
-html[dir="rtl"] .menuDrawer{right:auto;left:0;transform:translateX(-100%)}html[dir="rtl"] .menuOverlay.open .menuDrawer{transform:translateX(0)}
-.menuHead{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:16px;border-bottom:1px solid var(--line)}.menuHead strong{font-size:22px;color:var(--navy)}.menuClose{width:38px;height:38px;border:1px solid var(--line);background:#F7F8FA;color:var(--navy);font-size:20px}
-.menuSectionTitle{margin:22px 0 9px;color:#8A5400;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
-.menuLink{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 4px;border-bottom:1px solid var(--line);font-weight:800;color:var(--navy)}.menuLink small{font-size:11px;color:var(--muted);font-weight:750}.menuLink:hover{color:#9A5B00}
-.menuCount{min-width:26px;height:26px;padding:0 7px;border-radius:999px;display:grid;place-items:center;background:var(--soft);color:#8A5400;font-size:11px;font-weight:900}
-body.menuOpen{overflow:hidden}
-
-.cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 20px;background:var(--accent);color:var(--navy);box-shadow:0 8px 18px rgba(245,158,11,.22)}
-.cta:hover{background:var(--accent2);color:white}
-.languageGate{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(14,27,43,.82);backdrop-filter:blur(18px);transition:opacity .2s ease,visibility .2s ease}
-.languageGate.hidden{opacity:0;visibility:hidden;pointer-events:none}
-.languageBox{width:min(560px,94vw);padding:32px;border-radius:24px;background:white;box-shadow:0 28px 90px rgba(0,0,0,.3);text-align:center;color:var(--ink)}
-.languageBox .mark{margin:0 auto 18px;width:46px;height:46px;background:var(--navy)}.languageBox h2{margin:0 0 8px;font-size:clamp(30px,6vw,46px)}.languageBox p{margin:0 0 24px;color:var(--muted);line-height:1.6}
-.languageChoices{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.languageChoice{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;min-height:140px;padding:18px;border:1px solid var(--line);border-radius:18px;background:#FAFBFC;color:var(--ink);transition:.2s ease}
-.languageChoice:hover{transform:translateY(-2px);border-color:var(--accent);background:var(--soft)}.languageChoice .flag{font-size:40px;line-height:1}.languageChoice strong{font-size:19px}.languageChoice span:last-child{font-size:13px;color:var(--muted)}
-.trustStrip{display:flex;flex-wrap:wrap;gap:10px 18px;padding:14px 0;color:#4B5869;font-size:13px}.trustItem{display:inline-flex;align-items:center;gap:7px}.dot{width:7px;height:7px;border-radius:50%;background:var(--good)}
-footer{padding:34px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;margin-top:64px;background:white}
-html[dir="rtl"] body{font-family:Tahoma,Arial,"Segoe UI",sans-serif}
-@media(max-width:760px){.wrap{width:min(94vw,680px)}.navtag{display:none}.languageChoices{grid-template-columns:1fr}.languageChoice{min-height:112px}.languageBox{padding:26px 18px}}
-
-.hero{padding:52px 0 18px}.eyebrow{margin:0 0 9px;color:#9A5B00;font-size:12px;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
-h1{margin:0 0 14px;font-size:clamp(42px,7vw,70px);line-height:.98;letter-spacing:-.055em;color:var(--navy)}.lead{max-width:760px;margin:0;color:var(--muted);font-size:17px;line-height:1.65}
-.reelFeature{display:grid;grid-template-columns:minmax(250px,360px) 1fr;gap:28px;align-items:center;margin:16px 0 34px;padding:22px;background:white;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}.reelVideo{overflow:hidden;border-radius:18px;background:#0b1220;max-width:360px}.reelVideo video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover}.reelCopy h2{margin:0 0 10px;font-size:clamp(28px,4vw,44px);color:var(--navy);line-height:1.05}.reelCopy p{margin:0 0 16px;color:var(--muted);line-height:1.6}.reelPills{display:flex;flex-wrap:wrap;gap:8px}.reelPill{padding:8px 10px;border-radius:999px;background:var(--soft);color:#8A5400;font-weight:800;font-size:12px}.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:24px 0 18px}.sectionHead h2{margin:0;font-size:28px;color:var(--navy)}.small{color:var(--muted);font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-.card{overflow:hidden;background:white;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
-.card:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(14,27,43,.12);border-color:#D7DEE6}
-.media{position:relative;background:#fff}.media img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}.badge{position:absolute;top:14px;left:14px;padding:7px 10px;border-radius:999px;background:rgba(14,27,43,.94);color:white;font-size:12px;font-weight:800}.popular{background:#FFF3D6;color:#8B5200;border:1px solid #F3D28C}
-.cardBody{padding:20px}.card h3{margin:3px 0 8px;font-size:clamp(24px,3vw,32px);line-height:1.08;color:var(--navy);letter-spacing:-.035em}.desc{margin:0 0 14px;color:var(--muted);line-height:1.55}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}.chip{padding:7px 9px;border-radius:999px;background:#F2F4F7;color:#495668;font-size:12px;font-weight:700}
-.meta{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid var(--line)}.price{font-size:27px;font-weight:900;color:var(--navy)}.view{display:inline-flex;align-items:center;gap:5px;color:#9A5B00;font-weight:850}
-.proof{margin-top:10px;color:#556273;font-size:13px}.proof strong{color:var(--good)}
-.infoBox{margin:32px 0 4px;padding:18px 20px;border-radius:18px;background:white;border:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.infoItem strong{display:block;color:var(--navy);margin-bottom:4px}.infoItem span{color:var(--muted);font-size:13px;line-height:1.4}
-html[dir="rtl"] .hero,html[dir="rtl"] .cardBody,html[dir="rtl"] .sectionHead{text-align:right}html[dir="rtl"] .eyebrow{letter-spacing:0;text-transform:none}html[dir="rtl"] h1,html[dir="rtl"] .card h3{letter-spacing:0}html[dir="rtl"] .badge{left:auto;right:14px}
-@media(max-width:720px){.reelFeature{grid-template-columns:1fr;padding:16px}.reelVideo{width:min(78vw,330px);margin:auto}.hero{padding:36px 0 14px}.grid{grid-template-columns:1fr;gap:16px}.card{display:grid;grid-template-columns:130px 1fr}.media img{height:100%;aspect-ratio:auto}.badge{font-size:10px;top:8px;left:8px}.cardBody{padding:15px}.card h3{font-size:21px}.desc{font-size:13px}.chips{display:none}.price{font-size:22px}.view{font-size:13px}.infoBox{grid-template-columns:1fr}.proof{font-size:12px}html[dir="rtl"] .badge{left:auto;right:8px}}
-</style><script>
-window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
+:root{--navy:#0E1B2B;--navy2:#14283e;--bg:#F5F7F9;--card:#fff;--ink:#13202f;--muted:#667386;--line:#E1E6EC;--accent:#F59E0B;--accent2:#D97706;--soft:#FFF7E6;--good:#177245;--shadow:0 14px 42px rgba(14,27,43,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1120px,92vw);margin:auto}
+nav{position:sticky;top:0;z-index:50;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:rgba(14,27,43,.96);backdrop-filter:blur(16px);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.brand{display:flex;align-items:center;gap:11px;font-weight:850}.brandLogo{width:46px;height:46px;object-fit:cover;border-radius:12px}.navRight{display:flex;align-items:center;gap:12px}.navtag{font-size:13px;color:#c8d0da}.langSwitch,.menuButton{border:1px solid rgba(255,255,255,.18);background:transparent;color:#fff;border-radius:12px;cursor:pointer}.langSwitch{padding:8px 11px;font-weight:800}.menuButton{width:42px;height:42px;display:grid;place-items:center}.menuIcon{width:19px;height:14px;position:relative}.menuIcon:before,.menuIcon:after,.menuIcon span{content:"";position:absolute;left:0;right:0;height:2px;border-radius:10px;background:#fff}.menuIcon:before{top:0}.menuIcon span{top:6px}.menuIcon:after{bottom:0}
+.languageGate{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(7,16,28,.88);backdrop-filter:blur(20px);transition:.2s ease}.languageGate.hidden{opacity:0;visibility:hidden;pointer-events:none}.languageBox{width:min(610px,94vw);padding:38px;border-radius:26px;background:#fff;box-shadow:0 32px 100px rgba(0,0,0,.34);text-align:center}.gateMark{display:grid;place-items:center;width:48px;height:48px;margin:0 auto 18px;border-radius:14px;background:var(--navy);color:#ffd27a;border:1px solid rgba(245,158,11,.7);font-weight:900}.languageBox h2{margin:0;font-size:clamp(32px,6vw,48px);letter-spacing:-.04em;color:var(--navy)}.languageBox p{margin:12px 0 26px;color:var(--muted);line-height:1.6}.languageChoices{display:grid;grid-template-columns:1fr 1fr;gap:14px}.languageChoice{min-height:130px;border:1px solid var(--line);border-radius:18px;background:#fafbfc;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;transition:.18s ease}.languageChoice:hover{transform:translateY(-2px);border-color:var(--accent);background:var(--soft)}.languageChoice .flag{font-size:36px}.languageChoice strong{font-size:21px}.languageChoice small{color:var(--muted)}
+.menuOverlay{position:fixed;inset:0;z-index:900;background:rgba(7,16,28,.52);opacity:0;visibility:hidden;transition:.2s}.menuOverlay.open{opacity:1;visibility:visible}.menuDrawer{position:absolute;top:0;right:0;width:min(390px,88vw);height:100%;padding:calc(22px + env(safe-area-inset-top)) 22px 26px;overflow:auto;background:#fff;box-shadow:-22px 0 60px rgba(0,0,0,.2);transform:translateX(100%);transition:.24s}.menuOverlay.open .menuDrawer{transform:translateX(0)}html[dir="rtl"] .menuDrawer{right:auto;left:0;transform:translateX(-100%)}html[dir="rtl"] .menuOverlay.open .menuDrawer{transform:translateX(0)}.menuHead{display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid var(--line)}.menuHead strong{font-size:22px;color:var(--navy)}.menuClose{width:38px;height:38px;border:1px solid var(--line);border-radius:11px;background:#f7f8fa;color:var(--navy);font-size:20px;cursor:pointer}.menuSectionTitle{margin:22px 0 9px;color:#8a5400;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.menuLink{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 4px;border-bottom:1px solid var(--line);font-weight:800;color:var(--navy)}.menuCount{min-width:26px;height:26px;padding:0 7px;display:grid;place-items:center;border-radius:999px;background:var(--soft);color:#8a5400;font-size:11px}.menuLink small{color:var(--muted)}body.menuOpen{overflow:hidden}
+.hero{padding:54px 0 18px}.eyebrow{margin:0 0 9px;color:#925700;font-size:12px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}h1{max-width:900px;margin:0 0 16px;font-size:clamp(44px,7vw,72px);line-height:.98;letter-spacing:-.055em;color:var(--navy)}.lead{max-width:800px;margin:0;color:var(--muted);font-size:18px;line-height:1.65}.trustStrip{display:flex;flex-wrap:wrap;gap:10px 20px;padding:15px 0;color:#4d596a;font-size:13px}.trustItem{display:inline-flex;align-items:center;gap:7px}.dot{width:7px;height:7px;border-radius:50%;background:var(--good)}
+.explainer{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(300px,.82fr);gap:34px;align-items:center;margin:18px 0 42px;padding:22px;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}.videoFrame{overflow:hidden;border-radius:18px;background:#0b1220;border:1px solid rgba(14,27,43,.08)}.videoFrame video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}.explainerCopy h2{margin:0 0 12px;font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.035em;color:var(--navy)}.explainerCopy p{margin:0 0 16px;color:var(--muted);line-height:1.65}.explainerPills{display:flex;flex-wrap:wrap;gap:8px}.pill{padding:8px 10px;border-radius:999px;background:var(--soft);color:#8a5400;font-size:12px;font-weight:850}.videoHint{display:block;margin-top:10px;color:var(--muted);font-size:12px}
+.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:26px 0 18px}.sectionHead h2{margin:0;font-size:30px;color:var(--navy)}.small{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.card{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);transition:.18s}.card:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(14,27,43,.12)}.media{position:relative;background:#fff}.media img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}.badge{position:absolute;top:14px;left:14px;padding:7px 10px;border-radius:999px;background:rgba(14,27,43,.94);color:#fff;font-size:12px;font-weight:800}.popular{background:#fff3d6;color:#8b5200;border:1px solid #f3d28c}.cardBody{padding:20px}.card h3{margin:3px 0 8px;font-size:clamp(23px,3vw,31px);line-height:1.08;color:var(--navy);letter-spacing:-.035em}.desc{margin:0 0 14px;color:var(--muted);line-height:1.55}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}.chip{padding:7px 9px;border-radius:999px;background:#f2f4f7;color:#495668;font-size:12px;font-weight:700}.meta{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid var(--line)}.price{font-size:27px;font-weight:900;color:var(--navy)}.view{color:#935900;font-weight:850}.proof{margin-top:10px;color:#556273;font-size:13px}.proof strong{color:var(--good)}.infoBox{margin:34px 0 4px;padding:18px 20px;border-radius:18px;background:#fff;border:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.infoItem strong{display:block;color:var(--navy);margin-bottom:4px}.infoItem span{color:var(--muted);font-size:13px;line-height:1.4}.empty{display:none;margin:22px 0;padding:28px;border:1px dashed var(--line);border-radius:18px;background:#fff;text-align:center}.empty strong{display:block;color:var(--navy);font-size:20px;margin-bottom:6px}.empty span{color:var(--muted)}footer{padding:34px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;margin-top:64px;background:#fff}
+html[dir="rtl"] body{font-family:Tahoma,Arial,"Segoe UI",sans-serif}html[dir="rtl"] .hero,html[dir="rtl"] .explainerCopy,html[dir="rtl"] .cardBody,html[dir="rtl"] .sectionHead{text-align:right}html[dir="rtl"] h1,html[dir="rtl"] .card h3,html[dir="rtl"] .explainerCopy h2{letter-spacing:0}html[dir="rtl"] .eyebrow{letter-spacing:0;text-transform:none}html[dir="rtl"] .badge{left:auto;right:14px}
+@media(max-width:780px){.navtag{display:none}.languageChoices{grid-template-columns:1fr}.languageChoice{min-height:104px}.languageBox{padding:28px 18px}.hero{padding:38px 0 12px}.explainer{grid-template-columns:1fr;padding:16px}.grid{grid-template-columns:1fr}.infoBox{grid-template-columns:1fr}}
+@media(max-width:560px){.wrap{width:min(94vw,680px)}.grid{gap:16px}.card{display:grid;grid-template-columns:130px 1fr}.media img{height:100%;aspect-ratio:auto}.badge{font-size:10px;top:8px;left:8px}.cardBody{padding:15px}.card h3{font-size:20px}.desc{font-size:13px}.chips{display:none}.price{font-size:21px}.view{font-size:13px}html[dir="rtl"] .badge{left:auto;right:8px}}
+</style>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)}</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-
-<div class="languageGate" id="languageGate" aria-modal="true" role="dialog">
+<div class="languageGate" id="languageGate" aria-modal="true" role="dialog" aria-labelledby="languageTitle">
   <div class="languageBox">
-    <span class="mark">BF</span>
-    <h2>Choose your language</h2>
-    <p>اختر لغتك للمتابعة<br>Choose your preferred language to continue</p>
+    <span class="gateMark">BF</span>
+    <h2 id="languageTitle">اختر اللغة · Choose your language</h2>
+    <p>اختر اللغة اللي تفضلها للموقع والفيديو.<br>Choose the language you prefer for the website and video.</p>
     <div class="languageChoices">
-      <button class="languageChoice" type="button" data-language="ar"><span class="flag">🇦🇪</span><strong>العربية</strong><span>متابعة بالعربي</span></button>
-      <button class="languageChoice" type="button" data-language="en"><span class="flag">🇬🇧</span><strong>English</strong><span>Continue in English</span></button>
+      <button class="languageChoice" type="button" data-language="ar"><span class="flag">🇦🇪</span><strong>العربية</strong><small>عرض الموقع بالعربي</small></button>
+      <button class="languageChoice" type="button" data-language="en"><span class="flag">🇬🇧</span><strong>English</strong><small>View site in English</small></button>
     </div>
   </div>
 </div>
-<nav><a class="brand" href="/"><img class="brandLogo" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/a597014b-f7e9-466d-a818-6542e96d2fba.jpg" alt="Best Finds logo"><span>Best Finds</span></a><div class="navRight"><span class="navtag" data-i18n="navtag">Curated product finds</span><button class="langSwitch" id="langSwitch" type="button">🌐 EN</button><button class="menuButton" id="menuButton" type="button" aria-label="Open products menu"><span class="menuIcon"><span></span></span></button></div></nav>
-<div class="menuOverlay" id="siteMenu" aria-hidden="true">
-  <aside class="menuDrawer" aria-label="Products menu">
-    <div class="menuHead"><strong>Products / المنتجات</strong><button class="menuClose" id="menuClose" type="button" aria-label="Close menu">×</button></div>
-    <div class="menuSectionTitle">Categories / الأقسام</div>
-    <a class="menuLink categoryNav" data-category="all" href="/?category=all"><span>All Products / كل المنتجات</span><span class="menuCount">8</span></a>
-    <a class="menuLink categoryNav" data-category="electronics" href="/?category=electronics"><span>Electronics / إلكترونيات</span><span class="menuCount">4</span></a>
-    <a class="menuLink categoryNav" data-category="skincare" href="/?category=skincare"><span>Skincare / العناية بالبشرة</span><span class="menuCount">1</span></a>
-    <a class="menuLink categoryNav" data-category="personal-care" href="/?category=personal-care"><span>Personal Care / العناية الشخصية</span><span class="menuCount">2</span></a>
-    <a class="menuLink categoryNav" data-category="fashion" href="/?category=fashion"><span>Fashion / أزياء</span><span class="menuCount">1</span></a>
-    <a class="menuLink categoryNav" data-category="kitchen" href="/?category=kitchen"><span>Kitchen Tools / أدوات المطبخ</span><small>Soon / قريباً</small></a>
-  </aside>
-</div>
-
+<nav>
+  <a class="brand" href="/"><img class="brandLogo" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/a597014b-f7e9-466d-a818-6542e96d2fba.jpg" alt="Best Finds logo"><span>Best Finds</span></a>
+  <div class="navRight"><span class="navtag" data-i18n="navtag">Curated Temu finds</span><button class="langSwitch" id="langSwitch" type="button">🌐 EN</button><button class="menuButton" id="menuButton" type="button" aria-label="Open products menu"><span class="menuIcon"><span></span></span></button></div>
+</nav>
+<div class="menuOverlay" id="siteMenu" aria-hidden="true"><aside class="menuDrawer"><div class="menuHead"><strong>Products / المنتجات</strong><button class="menuClose" id="menuClose" type="button">×</button></div><div class="menuSectionTitle">Categories / الأقسام</div><a class="menuLink categoryNav" data-category="all" href="#"><span>All Products / كل المنتجات</span><span class="menuCount">8</span></a><a class="menuLink categoryNav" data-category="electronics" href="#"><span>Electronics / إلكترونيات</span><span class="menuCount">4</span></a><a class="menuLink categoryNav" data-category="skincare" href="#"><span>Skincare / العناية بالبشرة</span><span class="menuCount">1</span></a><a class="menuLink categoryNav" data-category="personal-care" href="#"><span>Personal Care / العناية الشخصية</span><span class="menuCount">2</span></a><a class="menuLink categoryNav" data-category="fashion" href="#"><span>Fashion / أزياء</span><span class="menuCount">1</span></a><a class="menuLink categoryNav" data-category="kitchen" href="#"><span>Kitchen Tools / أدوات المطبخ</span><small>Soon / قريباً</small></a></aside></div>
 <main class="wrap">
 <section class="hero">
-  <p class="eyebrow" data-i18n="eyebrow">Best Finds</p>
-  <h1 data-i18n="title">Find it faster.</h1>
-  <p class="lead" data-i18n="lead">Browse selected products, compare the essentials, then open the current Temu offer directly.</p>
-  <div class="trustStrip">
-    <span class="trustItem"><span class="dot"></span><span data-i18n="trust1">Direct Temu links</span></span>
-    <span class="trustItem"><span class="dot"></span><span data-i18n="trust2">Clear prices & terms</span></span>
-    <span class="trustItem"><span class="dot"></span><span data-i18n="trust3">No extra cost from affiliate links</span></span>
-  </div>
+  <p class="eyebrow" data-i18n="eyebrow">Best Finds UAE</p>
+  <h1 data-i18n="title">We search Temu. You get the best finds.</h1>
+  <p class="lead" data-i18n="lead">We look through products and offers, compare the useful details, and shortlist strong deals so you can decide faster.</p>
+  <div class="trustStrip"><span class="trustItem"><span class="dot"></span><span data-i18n="trust1">We search the clutter</span></span><span class="trustItem"><span class="dot"></span><span data-i18n="trust2">We compare prices & offers</span></span><span class="trustItem"><span class="dot"></span><span data-i18n="trust3">You decide before buying</span></span></div>
 </section>
-
-<section class="reelFeature">
-  <div class="reelVideo">
-    <video id="best3Video" controls playsinline preload="none" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/9dccb7e4-2dcc-4f4f-b794-e84e7c6e7421.jpg">
-      <source id="best3VideoSource" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/24a1659f-136d-4381-b830-794368abac26.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="reelCopy">
-    <p class="eyebrow" data-i18n="reelEyebrow">Latest video</p>
-    <h2 data-i18n="reelTitle">3 Temu Finds Right Now</h2>
-    <p data-i18n="reelDesc">One video, three current picks: the M26 digital camera, X7 bone-conduction headphones, and a 10.1-inch Android 14 tablet bundle.</p>
-    <div class="reelPills">
-      <span class="reelPill" data-i18n="reel1">M26 Camera</span>
-      <span class="reelPill" data-i18n="reel2">X7 Headphones</span>
-      <span class="reelPill" data-i18n="reel3">Android Tablet Bundle</span>
-    </div>
-  </div>
+<section class="explainer">
+  <div class="videoFrame"><video id="explainerVideo" autoplay muted loop controls playsinline preload="metadata"><source id="explainerVideoSource" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/5f5fdbd4-ed49-4d1c-bc77-cce9165a5958.mp4" type="video/mp4"></video></div>
+  <div class="explainerCopy"><p class="eyebrow" data-i18n="videoEyebrow">How Best Finds works</p><h2 data-i18n="videoTitle">15 seconds. This is what we do for you.</h2><p data-i18n="videoDesc">We scan Temu products, compare prices and offers, and highlight the strongest options before you open the retailer page.</p><div class="explainerPills"><span class="pill" data-i18n="videoPill1">Search</span><span class="pill" data-i18n="videoPill2">Compare</span><span class="pill" data-i18n="videoPill3">Shortlist</span></div><span class="videoHint" data-i18n="videoHint">Tap the speaker to hear the English voiceover.</span></div>
 </section>
-
 <div class="sectionHead"><h2 data-i18n="featured">Featured products</h2><span class="small" data-i18n="small">Tap a product for photos, video and details.</span></div>
-
-<section class="grid">
-  <a class="card productLink" data-category="skincare" href="/products/facial-cleanser.html">
-    <div class="media"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/76356659-1881-4fc5-be0a-0e1397994f89.jpg" alt="USB facial cleansing device"><span class="badge" data-i18n="badge1">Skincare</span></div>
-    <div class="cardBody">
-      <h3 data-i18n="p1">USB Facial Cleansing Device</h3>
-      <p class="desc" data-i18n="d1">Rechargeable device with four routine modes.</p>
-      <div class="chips"><span class="chip" data-i18n="p1c1">Rechargeable</span><span class="chip" data-i18n="p1c2">4 modes</span><span class="chip" data-i18n="p1c3">Compact</span></div>
-      <div class="meta"><span class="price">AED 27.30</span><span class="view" data-i18n="view">View details →</span></div>
-    </div>
-  </a>
-
-  <a class="card productLink" data-category="personal-care" href="/products/face-neck-massager.html">
-    <div class="media"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/3ac1bb0b-8cc0-4a0c-bbf5-eed34f109f11.jpg" alt="Face and neck massager"><span class="badge popular" data-i18n="badge2">Popular pick</span></div>
-    <div class="cardBody">
-      <h3 data-i18n="p2">Face & Neck Massager – 7 Modes</h3>
-      <p class="desc" data-i18n="d2">Rechargeable USB massager with seven modes for home use.</p>
-      <div class="chips"><span class="chip" data-i18n="p2c1">USB rechargeable</span><span class="chip" data-i18n="p2c2">7 modes</span><span class="chip" data-i18n="p2c3">Home use</span></div>
-      <div class="meta"><span class="price">AED 27.86</span><span class="view" data-i18n="view2">View details →</span></div>
-      <div class="proof"><strong>14K+ sold</strong> <span data-i18n="soldNote">shown on Temu when selected</span></div>
-    </div>
-  </a>
-
-  <a class="card productLink" data-category="electronics" href="/products/tab-a11-case.html">
-    <div class="media"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/a663af4e-6067-4e2a-9da1-fd310a9465bf.png" alt="Samsung Galaxy Tab A11 8.7 case"><span class="badge" data-i18n="badge3">Tech</span></div>
-    <div class="cardBody">
-      <h3 data-i18n="p3">Galaxy Tab A11 8.7" Soft TPU Case</h3>
-      <p class="desc" data-i18n="d3">Lightweight black TPU case with raised screen and camera edges.</p>
-      <div class="chips"><span class="chip" data-i18n="p3c1">Soft TPU</span><span class="chip" data-i18n="p3c2">Raised edges</span><span class="chip" data-i18n="p3c3">Lightweight</span></div>
-      <div class="meta"><span class="price">AED 12.69</span><span class="view" data-i18n="view3">View details →</span></div>
-    </div>
-  </a>
-
-  <a class="card productLink" data-category="electronics" href="/products/m26-digital-camera.html">
-    <div class="media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/hf_20261002_095902_edaedfa7-ead6-40eb-b271-98d2d65b6e4d.png" alt="M26 CCD digital camera"><span class="badge" data-i18n="badge4">Camera</span></div>
-    <div class="cardBody">
-      <h3 data-i18n="p4">M26 CCD Digital Camera</h3>
-      <p class="desc" data-i18n="d4">Compact digital camera for casual photos and everyday use.</p>
-      <div class="chips"><span class="chip" data-i18n="p4c1">CCD camera</span><span class="chip" data-i18n="p4c2">Compact</span><span class="chip" data-i18n="p4c3">Digital</span></div>
-      <div class="meta"><span class="price">AED 38.64</span><span class="view" data-i18n="view4">View details →</span></div>
-    </div>
-  </a>
-
-  <a class="card productLink" data-category="electronics" href="/products/x7-bone-conduction-headphones.html">
-    <div class="media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/hf_20261002_095905_22c625c3-a2cd-43d0-aee4-afe000793a31.png" alt="POLVCDG X7 bone conduction headphones"><span class="badge" data-i18n="badge5">Fitness audio</span></div>
-    <div class="cardBody">
-      <h3 data-i18n="p5">POLVCDG X7 Bone Conduction Headphones</h3>
-      <p class="desc" data-i18n="d5">Wireless sport headphones with 32GB memory and up to 10 hours of battery life.</p>
-      <div class="chips"><span class="chip" data-i18n="p5c1">IPX8</span><span class="chip" data-i18n="p5c2">32GB memory</span><span class="chip" data-i18n="p5c3">Up to 10H</span></div>
-      <div class="meta"><span class="price">AED 127.30</span><span class="view" data-i18n="view5">View details →</span></div>
-    </div>
-  </a>
-
-  <a class="card productLink" data-category="electronics" href="/products/android-14-tablet-bundle.html">
-    <div class="media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/hf_20261002_095909_cec2d93b-52f1-44dd-9b52-215a6fc0f04b.png" alt="10.1 inch Android 14 tablet bundle"><span class="badge popular" data-i18n="badge6">Bundle</span></div>
-    <div class="cardBody">
-      <h3 data-i18n="p6">10.1-inch Android 14 Tablet Bundle</h3>
-      <p class="desc" data-i18n="d6">Tablet bundle with keyboard, mouse, case and stylus.</p>
-      <div class="chips"><span class="chip" data-i18n="p6c1">Android 14</span><span class="chip" data-i18n="p6c2">128GB</span><span class="chip" data-i18n="p6c3">Accessories included</span></div>
-      <div class="meta"><span class="price">AED 345.06</span><span class="view" data-i18n="view6">View details →</span></div>
-    </div>
-  </a>
-
-  <a class="card productLink" data-category="personal-care" href="/products/makeup-tools-55pc.html">
-    <div class="media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/hf_20261002_152507_8d33a727-183d-48c4-896a-e4b3cb60586a.png" alt="55-piece makeup tools set"><span class="badge popular" data-i18n="badge7">Beauty</span></div>
-    <div class="cardBody">
-      <h3 data-i18n="p7">55-Piece Makeup Tools Set</h3>
-      <p class="desc" data-i18n="d7">Complete makeup tool set with 30 brushes, sponges, puffs and accessories.</p>
-      <div class="chips"><span class="chip" data-i18n="p7c1">30 brushes</span><span class="chip" data-i18n="p7c2">55 pieces</span><span class="chip" data-i18n="p7c3">Wash bag + bowl</span></div>
-      <div class="meta"><span class="price">AED 73.65</span><span class="view" data-i18n="view7">View details →</span></div>
-    </div>
-  </a>
-
-  <a class="card productLink" data-category="fashion" href="/products/5pc-frameless-sunglasses.html">
-    <div class="media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/hf_20261003_103106_eec0daf1-7ec3-42fd-a79e-716090da10b0.png" alt="5-piece frameless sunglasses set"><span class="badge popular" data-i18n="badge8">Fashion</span></div>
-    <div class="cardBody">
-      <h3 data-i18n="p8">5-Piece Frameless Sunglasses Set</h3>
-      <p class="desc" data-i18n="d8">Five frameless rectangular sunglasses in different colors for street, party and beach looks.</p>
-      <div class="chips"><span class="chip" data-i18n="p8c1">5 pieces</span><span class="chip" data-i18n="p8c2">Frameless</span><span class="chip" data-i18n="p8c3">Unisex style</span></div>
-      <div class="meta"><span class="price">AED 41.72</span><span class="view" data-i18n="view8">View details →</span></div>
-    </div>
-  </a>
-</section>
-<div id="emptyCategory" style="display:none;margin:22px 0;padding:28px;border:1px dashed var(--line);border-radius:18px;background:white;text-align:center"><strong style="display:block;color:var(--navy);font-size:20px;margin-bottom:6px">No products</strong><span style="color:var(--muted)">No products in this category yet</span></div>
-
-<section class="infoBox">
-  <div class="infoItem"><strong data-i18n="info1h">Shop with context</strong><span data-i18n="info1b">We show the key details before sending you to the retailer.</span></div>
-  <div class="infoItem"><strong data-i18n="info2h">Check the final price</strong><span data-i18n="info2b">Temu prices and eligibility can change, so the retailer page is final.</span></div>
-  <div class="infoItem"><strong data-i18n="info3h">Affiliate transparency</strong><span data-i18n="info3b">We may earn a commission from qualifying purchases at no extra cost to you.</span></div>
-</section>
+<section class="grid" id="productGrid"></section>
+<div class="empty" id="emptyCategory"><strong id="emptyTitle">No products</strong><span id="emptyText">No products in this category yet</span></div>
+<section class="infoBox"><div class="infoItem"><strong data-i18n="info1h">Shop with context</strong><span data-i18n="info1b">We show the key details before sending you to the retailer.</span></div><div class="infoItem"><strong data-i18n="info2h">Check the final price</strong><span data-i18n="info2b">Temu prices and eligibility can change, so the retailer page is final.</span></div><div class="infoItem"><strong data-i18n="info3h">Affiliate transparency</strong><span data-i18n="info3b">We may earn a commission from qualifying purchases at no extra cost to you.</span></div></section>
 </main>
 <footer><div class="wrap" data-i18n="affiliate">Affiliate disclosure: I may earn a commission from qualifying purchases at no extra cost to you.</div></footer>
 <script>
-const t={en:{navtag:"Curated product finds",eyebrow:"Best Finds",title:"Find it faster.",lead:"Browse selected products, compare the essentials, then open the current Temu offer directly.",trust1:"Direct Temu links",trust2:"Clear prices & terms",trust3:"No extra cost from affiliate links",reelEyebrow:"Latest video",reelTitle:"3 Temu Finds Right Now",reelDesc:"One video, three current picks: the M26 digital camera, X7 bone-conduction headphones, and a 10.1-inch Android 14 tablet bundle.",reel1:"M26 Camera",reel2:"X7 Headphones",reel3:"Android Tablet Bundle",featured:"Featured products",small:"Tap a product for photos, video and details.",badge1:"Skincare",p1:"USB Facial Cleansing Device",d1:"Rechargeable device with four routine modes.",p1c1:"Rechargeable",p1c2:"4 modes",p1c3:"Compact",badge2:"Popular pick",p2:"Face & Neck Massager – 7 Modes",d2:"Rechargeable USB massager with seven modes for home use.",p2c1:"USB rechargeable",p2c2:"7 modes",p2c3:"Home use",view:"View details →",view2:"View details →",badge3:"Tech",p3:"Galaxy Tab A11 8.7\" Soft TPU Case",d3:"Lightweight black TPU case with raised screen and camera edges.",p3c1:"Soft TPU",p3c2:"Raised edges",p3c3:"Lightweight",view3:"View details →",badge4:"Camera",p4:"M26 CCD Digital Camera",d4:"Compact digital camera for casual photos and everyday use.",p4c1:"CCD camera",p4c2:"Compact",p4c3:"Digital",view4:"View details →",badge5:"Fitness audio",p5:"POLVCDG X7 Bone Conduction Headphones",d5:"Wireless sport headphones with 32GB memory and up to 10 hours of battery life.",p5c1:"IPX8",p5c2:"32GB memory",p5c3:"Up to 10H",view5:"View details →",badge6:"Bundle",p6:"10.1-inch Android 14 Tablet Bundle",d6:"Tablet bundle with keyboard, mouse, case and stylus.",p6c1:"Android 14",p6c2:"128GB",p6c3:"Accessories included",view6:"View details →",soldNote:"shown on Temu when selected",info1h:"Shop with context",info1b:"We show the key details before sending you to the retailer.",info2h:"Check the final price",info2b:"Temu prices and eligibility can change, so the retailer page is final.",info3h:"Affiliate transparency",info3b:"We may earn a commission from qualifying purchases at no extra cost to you.",badge7:"Beauty",p7:"55-Piece Makeup Tools Set",d7:"Complete makeup tool set with 30 brushes, sponges, puffs and accessories.",p7c1:"30 brushes",p7c2:"55 pieces",p7c3:"Wash bag + bowl",view7:"View details →",badge8:"Fashion",p8:"5-Piece Frameless Sunglasses Set",d8:"Five frameless rectangular sunglasses in different colors for street, party and beach looks.",p8c1:"5 pieces",p8c2:"Frameless",p8c3:"Unisex style",view8:"View details →",affiliate:"Affiliate disclosure: I may earn a commission from qualifying purchases at no extra cost to you."},
-ar:{navtag:"اختيارات منتجات منتقاة",eyebrow:"أفضل الاختيارات",title:"وصل للمنتج أسرع.",lead:"تصفح المنتجات المختارة، شوف أهم التفاصيل، وبعدها افتح عرض Temu الحالي مباشرة.",trust1:"روابط مباشرة إلى Temu",trust2:"أسعار وشروط واضحة",trust3:"رابط الأفلييت بدون تكلفة إضافية عليك",reelEyebrow:"أحدث فيديو",reelTitle:"3 اختيارات من Temu حالياً",reelDesc:"فيديو واحد يجمع ثلاثة اختيارات حالية: كاميرا M26 الرقمية، سماعات X7 بالتوصيل العظمي، وباقة تابلت أندرويد 14 مقاس 10.1 إنش.",reel1:"كاميرا M26",reel2:"سماعات X7",reel3:"باقة تابلت أندرويد",featured:"المنتجات المميزة",small:"اضغط على المنتج لمشاهدة الصور والفيديو والتفاصيل.",badge1:"العناية بالبشرة",p1:"جهاز تنظيف الوجه القابل للشحن",d1:"جهاز قابل للشحن مع أربع وضعيات للاستخدام.",p1c1:"قابل للشحن",p1c2:"4 أوضاع",p1c3:"حجم صغير",badge2:"اختيار شائع",p2:"جهاز مساج للوجه والرقبة – 7 أوضاع",d2:"جهاز قابل للشحن عبر USB مع سبعة أوضاع للاستخدام المنزلي.",p2c1:"شحن USB",p2c2:"7 أوضاع",p2c3:"للاستخدام المنزلي",view:"عرض التفاصيل ←",view2:"عرض التفاصيل ←",badge3:"تقنية",p3:"كفر Galaxy Tab A11 8.7 بوصة من TPU",d3:"كفر أسود خفيف من TPU مع حواف مرتفعة للشاشة والكاميرا.",p3c1:"TPU مرن",p3c2:"حواف مرتفعة",p3c3:"خفيف",view3:"عرض التفاصيل ←",badge4:"كاميرا",p4:"كاميرا M26 CCD الرقمية",d4:"كاميرا رقمية صغيرة للاستخدام اليومي والتصوير العادي.",p4c1:"كاميرا CCD",p4c2:"حجم صغير",p4c3:"رقمية",view4:"عرض التفاصيل ←",badge5:"صوت رياضي",p5:"سماعات POLVCDG X7 بالتوصيل العظمي",d5:"سماعات رياضية لاسلكية بذاكرة 32GB وبطارية تصل إلى 10 ساعات.",p5c1:"IPX8",p5c2:"ذاكرة 32GB",p5c3:"حتى 10 ساعات",view5:"عرض التفاصيل ←",badge6:"باقة",p6:"باقة تابلت Android 14 مقاس 10.1 إنش",d6:"باقة تابلت مع كيبورد وماوس وكفر وقلم.",p6c1:"Android 14",p6c2:"128GB",p6c3:"إكسسوارات مرفقة",view6:"عرض التفاصيل ←",soldNote:"كما ظهر في Temu عند اختيار المنتج",info1h:"شوف التفاصيل أولًا",info1b:"نعرض لك أهم معلومات المنتج قبل الانتقال إلى المتجر.",info2h:"تأكد من السعر النهائي",info2b:"أسعار Temu والأهلية قد تتغير، وصفحة المتجر هي المرجع النهائي.",info3h:"شفافية الأفلييت",info3b:"قد نحصل على عمولة من بعض المشتريات المؤهلة دون أي تكلفة إضافية عليك.",badge7:"جمال ومكياج",p7:"طقم أدوات مكياج 55 قطعة",d7:"طقم متكامل يضم 30 فرشاة وإسفنجات وبفات وإكسسوارات للمكياج.",p7c1:"30 فرشاة",p7c2:"55 قطعة",p7c3:"حقيبة + وعاء تنظيف",view7:"عرض التفاصيل →",badge8:"أزياء",p8:"طقم 5 نظارات بدون إطار",d8:"خمس نظارات مستطيلة بدون إطار بألوان مختلفة للطلعات والستايل والبحر.",p8c1:"5 نظارات",p8c2:"بدون إطار",p8c3:"ستايل يونيسكس",view8:"عرض التفاصيل →",affiliate:"إفصاح: قد أحصل على عمولة من بعض المشتريات المؤهلة دون أي تكلفة إضافية عليك."}};
-const gate=document.getElementById("languageGate"),sw=document.getElementById("langSwitch"),best3Video=document.getElementById("best3Video"),best3VideoSource=document.getElementById("best3VideoSource");const best3Videos={en:"https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/24a1659f-136d-4381-b830-794368abac26.mp4",ar:"https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/41064752-d49e-4a00-9569-5a1b069bc309.mp4"};let lang=new URLSearchParams(location.search).get("lang")||localStorage.getItem("bestFindsLanguage")||"";
-function apply(l,save=true){lang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.dataset.i18n;if(t[l][k]!==undefined)e.textContent=t[l][k]});sw.textContent=l==="ar"?"🌐 العربية":"🌐 EN";if(best3VideoSource&&best3VideoSource.getAttribute("src")!==best3Videos[l]){best3VideoSource.setAttribute("src",best3Videos[l]);best3Video.load()}if(save)localStorage.setItem("bestFindsLanguage",l);gate.classList.add("hidden");document.body.style.overflow="";document.querySelectorAll(".productLink").forEach(a=>{const u=new URL(a.href);a.href=u.pathname+"?lang="+l})}
-document.querySelectorAll("[data-language]").forEach(b=>b.onclick=()=>apply(b.dataset.language));sw.onclick=()=>{gate.classList.remove("hidden");document.body.style.overflow="hidden"};if(lang)apply(lang,false);else document.body.style.overflow="hidden";
-
-const siteMenu=document.getElementById("siteMenu"),menuButton=document.getElementById("menuButton"),menuClose=document.getElementById("menuClose");
-function openMenu(){if(!siteMenu)return;siteMenu.classList.add("open");siteMenu.setAttribute("aria-hidden","false");document.body.classList.add("menuOpen")}
-function closeMenu(){if(!siteMenu)return;siteMenu.classList.remove("open");siteMenu.setAttribute("aria-hidden","true");document.body.classList.remove("menuOpen")}
-if(menuButton)menuButton.addEventListener("click",openMenu);
-if(menuClose)menuClose.addEventListener("click",closeMenu);
-if(siteMenu)siteMenu.addEventListener("click",e=>{if(e.target===siteMenu)closeMenu()});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu()});
-
-const productCards=[...document.querySelectorAll(".productLink")],emptyState=document.getElementById("emptyCategory");
-function filterCategory(cat,scroll=true){
-  const valid=["all","electronics","skincare","personal-care","fashion","kitchen"];
-  if(!valid.includes(cat))cat="all";
-  let shown=0;
-  productCards.forEach(card=>{
-    const ok=cat==="all"||card.dataset.category===cat;
-    card.style.display=ok?"":"none";
-    if(ok)shown++;
-  });
-  if(emptyState){
-    emptyState.style.display=shown?"none":"block";
-    const h=emptyState.querySelector("strong"),s=emptyState.querySelector("span");
-    if(h)h.textContent=cat==="kitchen"?"Kitchen Tools / أدوات المطبخ":"No products / لا توجد منتجات";
-    if(s)s.textContent=cat==="kitchen"?"Coming soon / قريباً":"No products in this category yet / لا توجد منتجات في هذا القسم حالياً";
-  }
-  const u=new URL(location.href);
-  u.searchParams.set("category",cat);
-  history.replaceState(null,"",u);
-  closeMenu();
-  if(scroll)document.querySelector(".sectionHead")?.scrollIntoView({behavior:"smooth",block:"start"});
-}
-document.querySelectorAll(".categoryNav").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();filterCategory(a.dataset.category)}));
-filterCategory(new URLSearchParams(location.search).get("category")||"all",false);
-
-/* Private analytics events for the site owner. */
-document.querySelectorAll(".productLink").forEach(link=>{
-  link.addEventListener("click",()=>{
-    try{
-      const href=link.getAttribute("href")||"";
-      const slug=(href.split("/products/")[1]||"").split("?")[0].replace(".html","");
-      window.va("event",{name:"Product Detail Click",data:{product:slug||"unknown",language:lang||"en"}});
-    }catch(_){}
-  });
-});
-if(best3Video){
-  let videoTracked=false;
-  best3Video.addEventListener("play",()=>{
-    if(videoTracked)return;videoTracked=true;
-    try{window.va("event",{name:"Featured Video Play",data:{video:"best-3-temu-finds",language:lang||"en"}})}catch(_){}
-  });
-}
-
+const videos={en:"https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/5f5fdbd4-ed49-4d1c-bc77-cce9165a5958.mp4",ar:"https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/455aa234-b467-4cf9-adc9-4d5477956e14.mp4"};
+const t={
+ en:{navtag:"Curated Temu finds",eyebrow:"Best Finds UAE",title:"We search Temu. You get the best finds.",lead:"We look through products and offers, compare the useful details, and shortlist strong deals so you can decide faster.",trust1:"We search the clutter",trust2:"We compare prices & offers",trust3:"You decide before buying",videoEyebrow:"How Best Finds works",videoTitle:"15 seconds. This is what we do for you.",videoDesc:"We scan Temu products, compare prices and offers, and highlight the strongest options before you open the retailer page.",videoPill1:"Search",videoPill2:"Compare",videoPill3:"Shortlist",videoHint:"Tap the speaker to hear the English voiceover.",featured:"Featured products",small:"Tap a product for photos, video and details.",info1h:"Shop with context",info1b:"We show the key details before sending you to the retailer.",info2h:"Check the final price",info2b:"Temu prices and eligibility can change, so the retailer page is final.",info3h:"Affiliate transparency",info3b:"We may earn a commission from qualifying purchases at no extra cost to you.",affiliate:"Affiliate disclosure: I may earn a commission from qualifying purchases at no extra cost to you.",view:"View details →",sold:"shown on Temu when selected",empty:"No products",emptyText:"No products in this category yet",kitchen:"Kitchen Tools",soon:"Coming soon"},
+ ar:{navtag:"اختيارات تيمو منتقاة",eyebrow:"Best Finds UAE",title:"نبحث في تيمو. وأنت تحصل على أفضل الاختيارات.",lead:"نبحث بين المنتجات والعروض، نقارن أهم التفاصيل، ونختصر لك أقوى الخيارات حتى تقدر تقرر أسرع.",trust1:"نفلتر المنتجات",trust2:"نقارن الأسعار والعروض",trust3:"وأنت تقرر قبل الشراء",videoEyebrow:"كيف يعمل Best Finds",videoTitle:"15 ثانية تشرح لك شو نسوي بدالك.",videoDesc:"نبحث بين منتجات تيمو، نقارن الأسعار والعروض، ونبرز لك أقوى الخيارات قبل ما تفتح صفحة المتجر.",videoPill1:"نبحث",videoPill2:"نقارن",videoPill3:"نختار",videoHint:"اضغط على الصوت لسماع الشرح بالعربي.",featured:"المنتجات المميزة",small:"اضغط على المنتج لمشاهدة الصور والفيديو والتفاصيل.",info1h:"شوف التفاصيل أولاً",info1b:"نعرض لك أهم معلومات المنتج قبل الانتقال إلى المتجر.",info2h:"تأكد من السعر النهائي",info2b:"أسعار Temu والأهلية قد تتغير، وصفحة المتجر هي المرجع النهائي.",info3h:"شفافية الأفلييت",info3b:"قد نحصل على عمولة من بعض المشتريات المؤهلة دون أي تكلفة إضافية عليك.",affiliate:"إفصاح: قد أحصل على عمولة من بعض المشتريات المؤهلة دون أي تكلفة إضافية عليك.",view:"عرض التفاصيل ←",sold:"كما ظهر في Temu عند اختيار المنتج",empty:"لا توجد منتجات",emptyText:"لا توجد منتجات في هذا القسم حالياً",kitchen:"أدوات المطبخ",soon:"قريباً"}
+};
+const products=[
+ {slug:"facial-cleanser",category:"skincare",price:"27.30",image:"https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/76356659-1881-4fc5-be0a-0e1397994f89.jpg",badge:{en:"Skincare",ar:"العناية بالبشرة"},name:{en:"USB Facial Cleansing Device",ar:"جهاز تنظيف الوجه القابل للشحن"},desc:{en:"Rechargeable device with four routine modes.",ar:"جهاز قابل للشحن مع أربع وضعيات للاستخدام."},chips:{en:["Rechargeable","4 modes","Compact"],ar:["قابل للشحن","4 أوضاع","حجم صغير"]}},
+ {slug:"face-neck-massager",category:"personal-care",price:"27.86",image:"https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/3ac1bb0b-8cc0-4a0c-bbf5-eed34f109f11.jpg",popular:true,sold:"14K+ sold",badge:{en:"Popular pick",ar:"اختيار شائع"},name:{en:"Face & Neck Massager – 7 Modes",ar:"جهاز مساج للوجه والرقبة – 7 أوضاع"},desc:{en:"Rechargeable USB massager with seven modes for home use.",ar:"جهاز قابل للشحن عبر USB مع سبعة أوضاع للاستخدام المنزلي."},chips:{en:["USB rechargeable","7 modes","Home use"],ar:["شحن USB","7 أوضاع","للاستخدام المنزلي"]}},
+ {slug:"tab-a11-case",category:"electronics",price:"12.69",image:"https://d2ol7oe51mr4n9.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/a663af4e-6067-4e2a-9da1-fd310a9465bf.png",badge:{en:"Tech",ar:"تقنية"},name:{en:"Galaxy Tab A11 8.7\" Soft TPU Case",ar:"كفر Galaxy Tab A11 8.7 بوصة من TPU"},desc:{en:"Lightweight black TPU case with raised screen and camera edges.",ar:"كفر أسود خفيف من TPU مع حواف مرتفعة للشاشة والكاميرا."},chips:{en:["Soft TPU","Raised edges","Lightweight"],ar:["TPU مرن","حواف مرتفعة","خفيف"]}},
+ {slug:"m26-digital-camera",category:"electronics",price:"38.64",image:"https://d8j0ntlcm91z4.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/hf_20261002_095902_edaedfa7-ead6-40eb-b271-98d2d65b6e4d.png",badge:{en:"Camera",ar:"كاميرا"},name:{en:"M26 CCD Digital Camera",ar:"كاميرا M26 CCD الرقمية"},desc:{en:"Compact digital camera for casual photos and everyday use.",ar:"كاميرا رقمية صغيرة للاستخدام اليومي والتصوير العادي."},chips:{en:["CCD camera","Compact","Digital"],ar:["كاميرا CCD","حجم صغير","رقمية"]}},
+ {slug:"x7-bone-conduction-headphones",category:"electronics",price:"127.30",image:"https://d8j0ntlcm91z4.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/hf_20261002_095905_22c625c3-a2cd-43d0-aee4-afe000793a31.png",badge:{en:"Fitness audio",ar:"صوت رياضي"},name:{en:"POLVCDG X7 Bone Conduction Headphones",ar:"سماعات POLVCDG X7 بالتوصيل العظمي"},desc:{en:"Wireless sport headphones with 32GB memory and up to 10 hours of battery life.",ar:"سماعات رياضية لاسلكية بذاكرة 32GB وبطارية تصل إلى 10 ساعات."},chips:{en:["IPX8","32GB memory","Up to 10H"],ar:["IPX8","ذاكرة 32GB","حتى 10 ساعات"]}},
+ {slug:"android-14-tablet-bundle",category:"electronics",price:"345.06",image:"https://d8j0ntlcm91z4.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/hf_20261002_095909_cec2d93b-52f1-44dd-9b52-215a6fc0f04b.png",popular:true,badge:{en:"Bundle",ar:"باقة"},name:{en:"10.1-inch Android 14 Tablet Bundle",ar:"باقة تابلت Android 14 مقاس 10.1 إنش"},desc:{en:"Tablet bundle with keyboard, mouse, case and stylus.",ar:"باقة تابلت مع كيبورد وماوس وكفر وقلم."},chips:{en:["Android 14","128GB","Accessories included"],ar:["Android 14","128GB","إكسسوارات مرفقة"]}},
+ {slug:"makeup-tools-55pc",category:"personal-care",price:"73.65",image:"https://d8j0ntlcm91z4.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/hf_20261002_152507_8d33a727-183d-48c4-896a-e4b3cb60586a.png",popular:true,badge:{en:"Beauty",ar:"جمال ومكياج"},name:{en:"55-Piece Makeup Tools Set",ar:"طقم أدوات مكياج 55 قطعة"},desc:{en:"Complete makeup tool set with 30 brushes, sponges, puffs and accessories.",ar:"طقم متكامل يضم 30 فرشاة وإسفنجات وبفات وإكسسوارات للمكياج."},chips:{en:["30 brushes","55 pieces","Wash bag + bowl"],ar:["30 فرشاة","55 قطعة","حقيبة + وعاء تنظيف"]}},
+ {slug:"5pc-frameless-sunglasses",category:"fashion",price:"41.72",image:"https://d8j0ntlcm91z4.cloudfront.net/user_3K7Of0aziPEFMaWnsN3gR9nwA3t/hf_20261003_103106_eec0daf1-7ec3-42fd-a79e-716090da10b0.png",popular:true,badge:{en:"Fashion",ar:"أزياء"},name:{en:"5-Piece Frameless Sunglasses Set",ar:"طقم 5 نظارات بدون إطار"},desc:{en:"Five frameless rectangular sunglasses in different colors for street, party and beach looks.",ar:"خمس نظارات مستطيلة بدون إطار بألوان مختلفة للطلعات والستايل والبحر."},chips:{en:["5 pieces","Frameless","Unisex style"],ar:["5 نظارات","بدون إطار","ستايل يونيسكس"]}}
+];
+let lang="",category="all";
+const gate=document.getElementById("languageGate"),sw=document.getElementById("langSwitch"),video=document.getElementById("explainerVideo"),source=document.getElementById("explainerVideoSource"),grid=document.getElementById("productGrid"),empty=document.getElementById("emptyCategory");
+function renderProducts(){const visible=products.filter(p=>category==="all"||p.category===category);grid.innerHTML=visible.map(p=>`<a class="card productLink" href="/products/${p.slug}.html?lang=${lang}"><div class="media"><img src="${p.image}" alt="${p.name[lang]}"><span class="badge ${p.popular?"popular":""}">${p.badge[lang]}</span></div><div class="cardBody"><h3>${p.name[lang]}</h3><p class="desc">${p.desc[lang]}</p><div class="chips">${p.chips[lang].map(c=>`<span class="chip">${c}</span>`).join("")}</div><div class="meta"><span class="price">AED ${p.price}</span><span class="view">${t[lang].view}</span></div>${p.sold?`<div class="proof"><strong>${p.sold}</strong> ${t[lang].sold}</div>`:""}</div></a>`).join("");empty.style.display=visible.length?"none":"block";if(!visible.length){document.getElementById("emptyTitle").textContent=category==="kitchen"?t[lang].kitchen:t[lang].empty;document.getElementById("emptyText").textContent=category==="kitchen"?t[lang].soon:t[lang].emptyText}document.querySelectorAll(".productLink").forEach(link=>link.addEventListener("click",()=>{try{window.va("event",{name:"Product Detail Click",data:{product:(link.getAttribute("href").split("/products/")[1]||"").split(".")[0],language:lang}})}catch(_){}}))}
+function apply(l,save=true){lang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.dataset.i18n;if(t[l][k]!==undefined)e.textContent=t[l][k]});sw.textContent=l==="ar"?"🌐 العربية":"🌐 EN";if(source.getAttribute("src")!==videos[l]){source.setAttribute("src",videos[l]);video.load()}if(save)localStorage.setItem("bestFindsLanguage",l);gate.classList.add("hidden");document.body.style.overflow="";renderProducts()}
+document.querySelectorAll("[data-language]").forEach(b=>b.addEventListener("click",()=>apply(b.dataset.language)));sw.addEventListener("click",()=>{gate.classList.remove("hidden");document.body.style.overflow="hidden"});const requested=new URLSearchParams(location.search).get("lang")||localStorage.getItem("bestFindsLanguage")||"";if(requested==="ar"||requested==="en")apply(requested,false);else document.body.style.overflow="hidden";
+const siteMenu=document.getElementById("siteMenu"),menuButton=document.getElementById("menuButton"),menuClose=document.getElementById("menuClose");function openMenu(){siteMenu.classList.add("open");siteMenu.setAttribute("aria-hidden","false");document.body.classList.add("menuOpen")}function closeMenu(){siteMenu.classList.remove("open");siteMenu.setAttribute("aria-hidden","true");document.body.classList.remove("menuOpen")}menuButton.addEventListener("click",openMenu);menuClose.addEventListener("click",closeMenu);siteMenu.addEventListener("click",e=>{if(e.target===siteMenu)closeMenu()});document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu()});document.querySelectorAll(".categoryNav").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();category=a.dataset.category;renderProducts();closeMenu();document.querySelector(".sectionHead").scrollIntoView({behavior:"smooth",block:"start"})}));
+let videoTracked=false;video.addEventListener("play",()=>{if(videoTracked)return;videoTracked=true;try{window.va("event",{name:"Explainer Video Play",data:{video:"best-finds-explainer",language:lang||"en"}})}catch(_){}});
 </script>
-</body></html>
+</body>
+</html>
