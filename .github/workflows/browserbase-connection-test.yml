@@ -1,0 +1,29 @@
+name: Browserbase connection test
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify Browserbase API key
+        env:
+          BROWSERBASE_API_KEY: ${{ secrets.BROWSERBASE_API_KEY }}
+        shell: bash
+        run: |
+          if [ -z "$BROWSERBASE_API_KEY" ]; then
+            echo "Missing BROWSERBASE_API_KEY repository secret"
+            exit 1
+          fi
+          status=$(curl --silent --output /dev/null --write-out '%{http_code}' --max-time 20 \
+            --header "X-BB-API-Key: $BROWSERBASE_API_KEY" \
+            --header "Accept: application/json" \
+            https://api.browserbase.com/v1/projects)
+          if [ "$status" = "200" ]; then
+            echo "Browserbase API authentication succeeded"
+          else
+            echo "Browserbase API check returned HTTP $status"
+            exit 1
+          fi
