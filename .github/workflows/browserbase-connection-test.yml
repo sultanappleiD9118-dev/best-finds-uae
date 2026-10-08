@@ -1,0 +1,21 @@
+name: Browserbase connection test (staging)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: staging/ai-agent-daily-products
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Browserbase API access without revealing credentials
+        env:
+          BROWSERBASE_API_KEY: ${{ secrets.BROWSERBASE_API_KEY }}
+          BROWSERBASE_PROJECT_ID: a19ecc19-346b-4824-be07-0e9b6a077023
+        run: node agent/check-browserbase.mjs
