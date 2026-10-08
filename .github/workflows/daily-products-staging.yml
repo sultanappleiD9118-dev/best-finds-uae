@@ -1,7 +1,7 @@
 name: Daily product agent (staging)
+# GitHub scheduled workflows only run from the default branch.
+# This staging workflow is manual until the scheduler is installed on main.
 on:
-  schedule:
-    - cron: '0 11 * * *' # 15:00 Asia/Dubai (UTC+4)
   workflow_dispatch:
 permissions:
   contents: read
