@@ -3,7 +3,7 @@
 This branch is isolated from `main`. No live product pages, affiliate links, or video assets are published.
 
 ## Schedule
-The workflow targets **15:00 Asia/Dubai**, which is **11:00 UTC** year-round. GitHub Actions scheduled workflows can start late or occasionally be skipped; use an external scheduler if exact timing is essential. The workflow also supports manual runs.
+The requested production schedule is **15:00 Asia/Dubai**, equivalent to **11:00 UTC** year-round. This staging workflow is **manual only**: GitHub Actions scheduled workflows run only from the default branch. When production is approved, install a default-branch scheduler (cron: `0 11 * * *`) that invokes the agent with publishing explicitly enabled. GitHub Actions schedules can be delayed or occasionally skipped.
 
 ## Current behavior
 `node agent/run.mjs` creates `agent/output/preview.json` from `agent/sample-products.json`. The sample list is empty on purpose. A candidate must be explicitly verified and contain an HTTPS affiliate URL, product price, and commission rate. Up to three products are ranked by estimated gross commission per unit. No real Temu products, commission figures, discounts, or tracking links are fabricated. The preview is uploaded as a workflow artifact, not deployed.
