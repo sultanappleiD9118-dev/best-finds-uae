@@ -10,7 +10,9 @@
     "accountLogin": "google",
     "access": "not_connected",
     "browserProvider": "browserbase",
-    "requirePermittedAutomation": true
+    "requirePermittedAutomation": true,
+    "browserbaseProjectId": "a19ecc19-346b-4824-be07-0e9b6a077023",
+    "browserbaseApiKeySecret": "BROWSERBASE_API_KEY"
   },
   "video": {
     "seconds": 15,
