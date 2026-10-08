@@ -1,0 +1,23 @@
+{
+  "mode": "staging",
+  "publish": false,
+  "timezone": "Asia/Dubai",
+  "dailyLocalTime": "15:00",
+  "dailyProductCount": 3,
+  "allowPreviouslyPublishedProducts": false,
+  "affiliateSource": {
+    "provider": "temu",
+    "accountLogin": "google",
+    "access": "not_connected",
+    "browserProvider": "browserbase",
+    "requirePermittedAutomation": true,
+    "browserbaseProjectId": "a19ecc19-346b-4824-be07-0e9b6a077023",
+    "browserbaseApiKeySecret": "BROWSERBASE_API_KEY"
+  },
+  "video": {
+    "seconds": 15,
+    "style": "synthetic_model_product_demonstration",
+    "provider": "not_connected",
+    "labelAiGenerated": true
+  }
+}

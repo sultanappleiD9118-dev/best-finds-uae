@@ -1,0 +1,24 @@
+name: Daily product agent (staging)
+# GitHub scheduled workflows only run from the default branch.
+# This staging workflow is manual until the scheduler is installed on main.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: staging/ai-agent-daily-products
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate safe staging preview
+        run: node agent/run.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: best-finds-staging-preview
+          path: agent/output/
